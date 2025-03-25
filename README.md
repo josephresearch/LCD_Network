@@ -5,9 +5,9 @@ This repository contains simulation scripts and data for the folowing preprint:
 ## Simulation Description
 
 Here we provide both simulation codes for FUS-LCD and HP sequence simulations in the folder [./sims/](./sims).
-* Folder [./sims/216x_FUS-LCD_T=270K/](./sims/216x_FUS-LCD_T=270K/) contains production run simulation input scripts for simulating 216 FUS-LCD chains at $T = 270\,\mathrm{K}$ using [LAMMMS](./https://www.lammps.org/) (version 23 Jun 2022) with [Mpipi](https://www.nature.com/articles/s43588-021-00155-3) forcefield. An example output trajectory file from the end of the simulation is also included.
+* Folder [./sims/216x_FUS-LCD_T=270K/](./sims/216x_FUS-LCD_T=270K/) contains production run simulation input scripts for simulating 216 FUS-LCD chains at $T = 270\,\mathrm{K}$ using [LAMMMS](https://www.lammps.org/) (version 23 Jun 2022) with [Mpipi](https://www.nature.com/articles/s43588-021-00155-3) forcefield. An example output trajectory file from the end of the simulation is also included.
   
-* Folder [./sims/125x_HP_fh=0.14_T=0.5/](./sims/125x_HP_fh=0.14_T=0.5/) contains production run simulation input scripts for simulating 125 HP sequence (hydrophobicity fh =0.14) at $T^* = 0.5\,k_{\mathrm{B}}T/\epsilon$ using [LAMMMS](./https://www.lammps.org/) (version 23 Jun 2022). An example output trajectory file from the end of the simulation is also included.
+* Folder [./sims/125x_HP_fh=0.14_T=0.5/](./sims/125x_HP_fh=0.14_T=0.5/) contains production run simulation input scripts for simulating 125 HP sequence (hydrophobicity fh =0.14) at $T^* = 0.5\,k_{\mathrm{B}}T/\epsilon$ using [LAMMMS](https://www.lammps.org/) (version 23 Jun 2022). An example output trajectory file from the end of the simulation is also included.
 
 ## Data Description
 

@@ -5,17 +5,17 @@ This repository contains simulation scripts and data for the folowing preprint:
 ## Simulation Description
 
 Here we provide both simulation codes for FUS-LCD and HP sequence simulations in the folder [./sims/](./sims).
-* Folder [./sims/216x_FUS-LCD_T=270K/](./sims/216x_FUS-LCD_T=270K/) contains production run simulation input scripts for simulating 216 FUS-LCD chains at $T = 270\,\mathrm{K}$ using [LAMMMS](https://www.lammps.org/) (version 23 Jun 2022) with [Mpipi](https://www.nature.com/articles/s43588-021-00155-3) forcefield. An example output trajectory file from the end of the simulation is also included.
+* Folder [./sims/216x_FUS-LCD_T=270K/](./sims/216x_FUS-LCD_T=270K/) contains production run simulation input scripts for simulating 216 FUS-LCD chains at $T = 270\mathrm{ K}$ using [LAMMPS](https://www.lammps.org/) (version 23 Jun 2022) with the [Mpipi](https://www.nature.com/articles/s43588-021-00155-3) forcefield. An example output trajectory file from the end of the simulation is also included.
   
-* Folder [./sims/125x_HP_fh=0.14_T=0.5/](./sims/125x_HP_fh=0.14_T=0.5/) contains production run simulation input scripts for simulating 125 HP sequence (hydrophobicity fh =0.14) at $T^* = 0.5\,k_{\mathrm{B}}T/\epsilon$ using [LAMMMS](https://www.lammps.org/) (version 23 Jun 2022). An example output trajectory file from the end of the simulation is also included.
+* Folder [./sims/125x_HP_fh=0.14_T=0.5/](./sims/125x_HP_fh=0.14_T=0.5/) contains production run simulation input scripts for simulating 125 copies of an HP model sequence (hydrophobic fraction $f_{\mathrm{h}} = 0.14$) at $T^* = 0.5\text{ }k_{\mathrm{B}}T/\epsilon$ using [LAMMPS](https://www.lammps.org/) (version 23 Jun 2022). An example output trajectory file from the end of the simulation is also included.
 
 ## Data Description
 
-Data is organized based on visualized figures in the manuscrip and placed in the folder [./data/](./data/).
-  * Folder [./data/Figure1/](./data/Figure1/) contains small-world coeffecients and graph network densities of 50 sampled frames.
-  * Folder [./data/Figure2/](./data/Figure2/) contains spatial and temporal distribution network hubs and cliques.
-  * Folder [./data/Figure3/](./data/Figure3/) contains power-law correlation data for chain conformations and node betwenness centrality.
-    * For visulizing the adjacency matrix [Fig3a_FUS_frame_graph_adjacency_matrix.npy](./data/Figure3/Fig3a_FUS_frame_graph_adjacency_matrix.npy), the following code can be used
+Data is organized based on visualized figures in the manuscript and is placed in the folder [./data/](./data/).
+  * Folder [./data/Figure1/](./data/Figure1/) contains small-world coefficients and graph edge densities of 50 sampled frames from each simulation.
+  * Folder [./data/Figure2/](./data/Figure2/) contains spatial and temporal distribution data for network hubs and cliques.
+  * Folder [./data/Figure3/](./data/Figure3/) contains power-law correlation data for chain conformations and node betweenness centrality.
+    * For visualizing the adjacency matrix [Fig3a_FUS_frame_graph_adjacency_matrix.npy](./data/Figure3/Fig3a_FUS_frame_graph_adjacency_matrix.npy), the following code can be used
       ```py
       import networkx as nx
       import matplotlib.pyplot as plt
@@ -36,5 +36,5 @@ Data is organized based on visualized figures in the manuscrip and placed in the
       nx.draw_networkx_edges(G, pos, ax=ax)
       nx.draw_networkx_nodes(G, pos, ax=ax)
       ```
-  * Folder [./data/Figure4/](./data/Figure4/) contains power-law correlation data for chain displacements and node betwenness centrality.
+  * Folder [./data/Figure4/](./data/Figure4/) contains power-law correlation data for chain displacements and node betweenness centrality.
     

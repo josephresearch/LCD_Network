@@ -1,0 +1,76 @@
+variable temperature equal 270
+variable randomSeed equal 103848
+
+# Initialise parameters for units and box type
+units       real
+dimension   3
+boundary    p p p
+atom_style  full
+
+# Initital pair style and bond parameters
+bond_style  harmonic
+
+dielectric  80.0
+
+# Create new simulation box or load existing box
+read_data       FUS-LCD.config
+
+# Set pair parameters
+include         mpipi_potentials.dat
+
+velocity        all create ${temperature} ${randomSeed}
+
+special_bonds fene
+
+# neighbour list settings
+neighbor  3.5 multi
+
+# Timestep and computational parameters
+comm_style      tiled
+timestep        10
+
+# Relax sim by performing minimisation (this is helpful if we change the potential or sequence)
+min_style       fire
+timestep        0.0000001
+minimize 0.0 1.0e-8 10000 100000000
+timestep        0.00001
+minimize 0.0 1.0e-8 10000 100000000
+timestep        0.1
+minimize 0.0 1.0e-8 10000 100000
+timestep        10
+minimize 0.0 1.0e-8 10000 100000
+
+neigh_modify    every 10 delay 0
+
+fix             fxnve   all nve
+fix             fxlange all langevin ${temperature} ${temperature} 100000.0 ${randomSeed}
+fix             fxbal  all balance 1000 1.1 rcb
+
+# Thermo output settings
+thermo          10000
+thermo_style    custom step pe ecoul ke temp press density
+thermo_modify   flush yes
+
+dump            1 all custom 10000 equilibration.lammpstrj id mol type q x y z
+
+# Equilibration
+run             500000
+
+# z-axis density - 50 bins
+compute         myChunk2 all chunk/atom bin/1d z lower 0.02 units reduced
+fix             densityRegions2 all ave/chunk 1000 40 50000 myChunk2 density/mass file densities_chunked2.dat
+
+# this is taking way too long so I'm removing it; we also manually do this to create the network
+# so until we write a compute command to generate the network structure/matrix within LAMMPS i'm killing this
+# dump            6 all local 10000 pairdists.out index c_allDists[1] c_allDists[2] c_allDists[3]
+
+fix fixCOM all recenter INIT INIT INIT  # this helps to prevent drift of the interfaces and makes it easier to average over many measurements
+
+dump            2 all custom 100000 result.lammpstrj id mol type q xu yu zu
+
+# Run simulation (1us, checkpoint every 200ns)
+restart         20000000 restart ## just in case this becomes necessary
+run             100000000
+
+# write final configuration
+write_data      final-structure.dat nocoeff

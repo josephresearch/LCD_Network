@@ -1,9 +1,16 @@
-This repository contains the data used in the folowing preprint:
+This repository contains simulation scripts and data for the folowing preprint:
 
 **Daniel Tan, Dilimulati Aierken, and Jerelle A. Joseph. "Interaction networks within biomolecular condensates feature topological cliques near the interface". bioRxiv (2025)**
 
+## Simulation Description
+
+Here we provide both simulation codes for FUS-LCD and HP sequence simulations in the folder [./sims/](./sims).
+* Folder [./sims/216x_FUS-LCD_T=270K/](./sims/216x_FUS-LCD_T=270K/) contains production run simulation input scripts for simulating 216 FUS-LCD chains at $T = 270\,\mathrm{K}$ using [LAMMMS](./https://www.lammps.org/) (version 23 Jun 2022) with [Mpipi](https://www.nature.com/articles/s43588-021-00155-3) forcefield. An example output trajectory file from the end of the simulation is also included.
+  
+* Folder [./sims/125x_HP_fh=0.14_T=0.5/](./sims/125x_HP_fh=0.14_T=0.5/) contains production run simulation input scripts for simulating 125 HP sequence (hydrophobicity fh =0.14) at $T^* = 0.5\,k_{\mathrm{B}}T/\epsilon$ using [LAMMMS](./https://www.lammps.org/) (version 23 Jun 2022). An example output trajectory file from the end of the simulation is also included.
 
 ## Data Description
+
 Data is organized based on visualized figures in the manuscrip and placed in the folder [./data/](./data/).
   * Folder [./data/Figure1/](./data/Figure1/) contains small-world coeffecients and graph network densities of 50 sampled frames.
   * Folder [./data/Figure2/](./data/Figure2/) contains spatial and temporal distribution network hubs and cliques.

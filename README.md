@@ -1,6 +1,6 @@
 This repository contains the data used in the folowing preprint:
 
-**Daniel Tan, Dilimulati Aierken, and Jerelle A. Joseph. "Biomolecular condensate networks feature topological cliques near the interface". bioRxiv (2025): 2025-03.**
+**Daniel Tan, Dilimulati Aierken, and Jerelle A. Joseph. "Biomolecular condensate networks feature topological cliques near the interface". bioRxiv (2025)**
 
 
 ## Data Description

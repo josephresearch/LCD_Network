@@ -12,6 +12,7 @@ Here we provide molecular dynamics simulation codes for both FUS-LCD and an exam
 ## Data Description
 
 Data is organized based on visualized figures in the manuscript and is placed in the folder [./data/](./data/). Unless otherwise labeled, provided data reflect analyses where condensate interaction networks are constructed by assigning edges between molecules (nodes) A and B if the intermolecular interaction energy $E_{\rm{AB}}<-5k_{\rm B}T$. 
+  * Folder [./data/Figure1/](./data/Figure1/) contains data for phase diagrams and surface tension mesuarements.
   * Folder [./data/Figure2/](./data/Figure2/) contains small-world coefficients, constructed interaction matrices (adjacency matrices of graphs), and intermolecular interaction energies across 50 sampled frames from each simulation.
     * For visualizing adjacency matrices, e.g., [./data/Figure2/LCD/0.90Tc/A1-LCD/ixnmats_5kbT.npy](./data/Figure2/LCD/0.90Tc/A1-LCD/ixnmats_5kbT.npy), the following code can be used
       ```py

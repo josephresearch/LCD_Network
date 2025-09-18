@@ -1,4 +1,4 @@
-This repository contains simulation scripts and data for the folowing preprint:
+This repository contains simulation scripts and data for the folowing article:
 
 **Daniel Tan, Dilimulati Aierken, Pablo L. Garcia, and Jerelle A. Joseph. "Biomolecular condensate microstructure is invariant to sequence-encoded molecular and macroscopic properties". Soft Matter (2025)**
 

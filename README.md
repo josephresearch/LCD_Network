@@ -1,6 +1,6 @@
 This repository contains simulation scripts and data for the folowing preprint:
 
-**Daniel Tan, Dilimulati Aierken, Pablo L. Garcia, and Jerelle A. Joseph. "Biomolecular condensate microstructure couples molecular and mesoscale properties". bioRxiv (2025)**
+**Daniel Tan, Dilimulati Aierken, Pablo L. Garcia, and Jerelle A. Joseph. "Biomolecular condensate microstructure is invariant to sequence-encoded molecular and macroscopic properties". Soft Matter (2025)**
 
 ## Simulation Description
 
